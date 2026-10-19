@@ -1,4 +1,5 @@
 package tp_poo_avancee;
+
 public abstract class Document implements Comparable < Document > {
 private static int compteur = 0;
 private final int id;
