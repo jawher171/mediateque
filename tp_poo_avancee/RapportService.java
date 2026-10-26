@@ -33,12 +33,16 @@ public class RapportService {
         this.notificateur = n;
     }
 
-    public void genererRapport(List<Document> docs) throws IOException {
+    public void generer(List<Document> docs) throws IOException {
         String contenu = format.formater(docs);
         sortie.ecrire(contenu);
         if (notificateur != null) {
             notificateur.notifier("Rapport généré avec succès (" + docs.size() + " documents)");
         }
+    }
+
+    public void genererRapport(List<Document> docs) throws IOException {
+        generer(docs);
     }
 
     public FormatRapport getFormat() {
